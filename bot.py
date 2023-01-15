@@ -60,7 +60,7 @@ async def on_reaction_add(reaction, user):
         game = lines[0].split('**')[1]
         lines[0] = f'{caller} is now calling for **{game}** with **{slots_left - 1}** slots left!'
 
-        line2 = lines[1].split('**')
+        line2 = lines[2].split('**')
         line2[1] = f'**{str(int(line2[1])+1)}**'
         line2.append(f' {user.mention}')
         line2 = ''.join(line2)
