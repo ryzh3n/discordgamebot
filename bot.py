@@ -83,7 +83,7 @@ async def on_reaction_remove(reaction, user):
         caller = lines[0].split(' is')[0]
         game = lines[0].split('**')[1]
 
-        players = lines[1].split(': ')
+        players = lines[2].split(': ')
         if len(players) > 1:
             players = players[1].split(' ')
             if user.mention in players:
