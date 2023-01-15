@@ -46,11 +46,10 @@ async def on_reaction_add(reaction, user):
         slots_left = int(lines[0].split('with')[1].split('**')[1])
         if slots_left < 1:
             await message.remove_reaction(tick_emoji, user)
-            lines[1] = f"The Game is now Full {cross_emoji}"
-            embed.description = '\n\n'.join(lines)
-            await message.edit(embed=embed)
             await message.channel.send(f"Sorry {user.mention}, the game is already full.")
             return
+        if slots_left == 1:
+            lines[1] = f"The Game is now Full {cross_emoji}"
         caller = lines[0].split(' is')[0]
         if caller == user.mention:
             await message.remove_reaction(tick_emoji, user)
@@ -78,7 +77,7 @@ async def on_reaction_remove(reaction, user):
         lines = embed.description.split('\n\n')
 
         slots_left = int(lines[0].split('with')[1].split('**')[1])
-        if slots_left > 0:
+        if slots_left == 0:
             lines[1] = f'Click on the {tick_emoji} to join the game.'
         caller = lines[0].split(' is')[0]
         game = lines[0].split('**')[1]
