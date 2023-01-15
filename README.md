@@ -3,7 +3,7 @@
 
 Calls a game in your server for your friends to join.
 
-![screenshot](example.png)
+![screenshot](image.png)
 
 Usage: **/g `game` `slot`**
 
