@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 
-TOKEN = "MTA2MzgyMDYzMTE4MDg0NTA3Ng.GfQq3y.Lh0Q8z-76ZgNhqO0cHlFkgoRDZtbdI2fUd-fkM"
+TOKEN = "your_token_here"
 bot = commands.Bot(command_prefix="-", intents=discord.Intents.all())
 tick_emoji = u"\u2705"
 cross_emoji = u"\u274c"
