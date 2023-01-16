@@ -9,7 +9,7 @@ Remember to change your `TOKEN` in `bot.py` if you want to run the bot yourself.
 
 ![screenshot](image.png)
 
-Usage: **/g `game` `slot`**
+## Usage: **/g `game` `slot`**
 
 `game` stands for the game you want to call, while `slot` stands for the number of slots you want people to join.
 
