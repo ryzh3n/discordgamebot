@@ -52,7 +52,7 @@ async def on_reaction_add(reaction, user):
             await message.channel.send(f"Sorry {user.mention}, you can't join your own game.")
             await message.remove_reaction(tick_emoji, user)
             return
-        slots = int(embed.fields[0].name.split('/')[1][0])
+        slots = int(embed.fields[0].name.split('/')[1].split(')')[0])
         players = embed.fields[0].value
         if players == '':
             players = []
@@ -84,7 +84,7 @@ async def on_reaction_remove(reaction, user):
         if caller == user.mention:
             return
 
-        slots = int(embed.fields[0].name.split('/')[1][0])
+        slots = int(embed.fields[0].name.split('/')[1].split(')')[0])
         players = embed.fields[0].value.split(' ')
 
         embed.clear_fields()
